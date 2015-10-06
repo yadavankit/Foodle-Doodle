@@ -3,7 +3,7 @@
 
     <div class="container-fluid" >
         {{-- Navbar Header --}}
-        <div class="navbar-header">
+        <div class="navbar-header" style="font-family: 'Maven Pro', sans-serif;">
             {{-- Brand Logo --}}
             <a class="navbar-brand" href="#">FoodleDoodle</a>
         </div>
