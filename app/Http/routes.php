@@ -28,5 +28,10 @@ Route::get('products', 'ProductsController@index');
 //Product Category Route
 Route::get('products/{category}', 'ProductController@categoryDisplay');
 
+//Guest Login Route
+Route::get('guest-login', 'UserController@guestLogin');
+
+
+
 
 

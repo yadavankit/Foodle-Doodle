@@ -4,6 +4,7 @@
 
 @section('content')
 
+    <div class="container" style="margin-top: 200px;">
     <div id="login" class="col-lg-4 container-fluid" style="margin-left: 20px;">
 
 
@@ -13,7 +14,7 @@
         {!! Form::open(array('url'=>'login')) !!}
 
         <div class="input-group">
-            Username
+            User ID
             {!! Form::text('name', null, array('class'=>'form-control')) !!}
             <br><br>
             Password
@@ -34,7 +35,7 @@
         <!-- Signup Form Open -->
 
         <h2>SIGNUP HERE</h2>
-        {!! Form::open(array('url'=>'sugnup')) !!}
+        {!! Form::open(array('url'=>'signup')) !!}
 
         <div class="input-group">
             Username
@@ -73,6 +74,15 @@
         <a href="login/google">GOOGLE</a><br><br>
 
     </div>
+
+    <div id="guest_login" class="col-lg-2">
+        <h2>OR</h2>
+
+        <a href="guest-login">LOGIN AS GUEST ?</a>
+
+    </div>
+    </div>
+
 
 
 

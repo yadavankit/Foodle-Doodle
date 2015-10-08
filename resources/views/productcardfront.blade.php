@@ -10,7 +10,7 @@
     {{-- Card Product Image --}}
     <div class="user">
         {{-- Product Image --}}
-        <img class="img-circle" src="http://alicethecook.com/wp-content/uploads/2009/11/Ren-food-2.jpg"/>
+        <img class="img-circle" src="http://www.ilovealabamafood.com/wp-content/uploads/2011/12/dish-detail-bouillabaisse.png"/>
     </div>
 
     {{-- Card Front Content --}}

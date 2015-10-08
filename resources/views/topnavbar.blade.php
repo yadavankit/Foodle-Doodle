@@ -5,7 +5,7 @@
         {{-- Navbar Header --}}
         <div class="navbar-header" style="font-family: 'Maven Pro', sans-serif;">
             {{-- Brand Logo --}}
-            <a class="navbar-brand" href="#">FoodleDoodle</a>
+            <a class="navbar-brand" href="#">FoodleDoodle<sup>beta</sup></a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

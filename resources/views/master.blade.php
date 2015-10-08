@@ -16,15 +16,19 @@
         <link rel="stylesheet" href="/FoodleApp/resources/assets/css/rotating-card.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="/FoodleApp/resources/assets/css/foodle.css">
+        <link rel="stylesheet" href="/FoodleApp/resources/assets/css/scrolling-nav.css">
+        <script src="/FoodleApp/resources/assets/js/scrolling-nav.js"></script>
+        <script src="/FoodleApp/resources/assets/js/jquery.easing.min.js"></script>
+
 
 
         {{-- Top Navigation Bar --}}
         @include('topnavbar')
 
         {{-- Jumbotron --}}
-        <div class="jumbotron" style= "background-color: #383D3B; font-family: 'Maven Pro', sans-serif; color:white;">
-            <center><h1>FoodleDoodle</h1></center>
-        </div>
+        {{--<div class="jumbotron" style= "background-color: #383D3B; font-family: 'Maven Pro', sans-serif; color:white;">--}}
+            {{--<center><h1>FoodleDoodle</h1></center>--}}
+        {{--</div>--}}
 
         {{-- Yield Content --}}
         @yield('content')
