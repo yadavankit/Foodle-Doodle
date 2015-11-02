@@ -1,61 +1,42 @@
-@extends('master')
+{{--Extends Master--}}
+@extends('masters.master')
 
+{{--Content --}}
 @section('content')
-    <div class="container-fluid">
+
+
+
+    <div class="container-fluid" style="margin-top: 100px;">
+
+        {{--Errors in Form--}}
+
+        @if (count($errors) > 0)
+
+            {{--Alert Div--}}
+            <div class="alert alert-danger">
+                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+
+                {{--List Each Error--}}
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+
+        @endif
+
+    {{--Login Form Div--}}
+
+    <div class="container-fluid col-md-6">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default" style="margin-top: 100px;">
+                <div class="panel panel-default">
                     <div class="panel-heading">Login</div>
                     <div class="panel-body">
-                        @if (count($errors) > 0)
-                            <div class="alert alert-danger">
-                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
 
-                        <form class="form-horizontal" role="form" method="POST" action="../auth/login">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">E-Mail Address</label>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" name="email" value="{{ old('email') }}">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Password</label>
-                                <div class="col-md-6">
-                                    <input type="password" class="form-control" name="password">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="remember"> Remember Me
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary" style="margin-right: 15px;">
-                                        Login
-                                    </button>
-
-                                    <a href="../password/email">Forgot Your Password?</a>
-                                </div>
-                            </div>
-                        </form>
-
+                        {{--Include Login Form--}}
+                        @include('forms.login_form')
 
                     </div>
                 </div>
@@ -63,65 +44,22 @@
         </div>
     </div>
 
-    <div class="container-fluid">
+    {{--Register Form Div--}}
+    <div class="container-fluid col-md-6">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">Register</div>
                     <div class="panel-body">
-                        @if (count($errors) > 0)
-                            <div class="alert alert-danger">
-                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
 
-                            <form class="form-horizontal" role="form" method="POST" action="register">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        {{--Include Register Form--}}
+                        @include('forms.register_form')
 
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">Name</label>
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control" name="name" value="{{ old('name') }}">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">E-Mail Address</label>
-                                    <div class="col-md-6">
-                                        <input type="email" class="form-control" name="email" value="{{ old('email') }}">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">Password</label>
-                                    <div class="col-md-6">
-                                        <input type="password" class="form-control" name="password">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">Confirm Password</label>
-                                    <div class="col-md-6">
-                                        <input type="password" class="form-control" name="password_confirmation">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="col-md-6 col-md-offset-4">
-                                        <button type="submit" class="btn btn-primary">
-                                            Register
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
     </div>
 @endsection

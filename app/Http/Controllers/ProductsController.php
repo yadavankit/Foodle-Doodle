@@ -42,7 +42,7 @@ class ProductsController extends Controller
         }
 
         //Return View Product List
-        return view('productlist')->with('passedData', $passedData);
+        return view('products.productlist')->with('passedData', $passedData);
     }
 
     public function categoryDisplay()

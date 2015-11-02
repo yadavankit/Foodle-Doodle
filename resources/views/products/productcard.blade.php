@@ -6,10 +6,10 @@
     <div class="card">
 
         {{-- Card Front View --}}
-        @include('productcardfront')
+        @include('products.productcardfront')
 
         {{-- Card Back View --}}
-        @include('productcardback')
+        @include('products.productcardback')
 
     </div>
 </div>

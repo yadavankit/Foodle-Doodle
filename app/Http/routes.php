@@ -11,10 +11,11 @@
 |
 */
 
-//Login Page Root Route
-Route::get('/', function () {
-    return view('login');
+//Login and Register Page Route
+Route::get('/', function(){
+    return Redirect::to('auth/login');
 });
+
 
 //Auth Controller Routes
 Route::controllers([
@@ -22,19 +23,23 @@ Route::controllers([
     'password' => 'Auth\PasswordController',
 ]);
 
-//Primary SignUp Route
-Route::post('signup', 'UserController@primarySignUp');
 
-//Primary Login Route
-Route::post('login', 'UserController@primaryLogin');
-
-//Product Display Route
+//Product List Route
 Route::get('products', 'ProductsController@index');
 
-//Guest Login Route
-Route::get('guest-login', 'UserController@guestLogin');
-
-//Product Details Route
-Route::get('products/{id}', 'ProductsController@show');
+////Primary SignUp Route
+//Route::post('signup', 'UserController@primarySignUp');
+//
+////Primary Login Route
+//Route::post('login', 'UserController@primaryLogin');
+//
+////Product Display Route
+//Route::get('products', 'ProductsController@index');
+//
+////Guest Login Route
+//Route::get('guest-login', 'UserController@guestLogin');
+//
+////Product Details Route
+//Route::get('products/{id}', 'ProductsController@show');
 
 

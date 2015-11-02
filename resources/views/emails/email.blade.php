@@ -1,4 +1,4 @@
-@extends('master')
+@extends('masters.master')
 
 @section('content')
     {{ $data }}

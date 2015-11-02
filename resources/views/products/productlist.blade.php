@@ -1,5 +1,5 @@
 {{-- Extends Master --}}
-@extends('master')
+@extends('masters.master')
 
 {{-- Set Title as Products --}}
 @section('title', 'Foodle | Products')
@@ -8,7 +8,7 @@
 @section('content')
 
      {{--Display Category Navbar --}}
-    @include('categorynavbar')
+    @include('products.categorynavbar')
 
     <div style="margin-top: 120px;">
 
@@ -23,7 +23,7 @@
                 {{-- Diplay Products of Specific Category --}}
                 @foreach($category['products'] as $product)
                     {{-- Display Product Card --}}
-                    @include('productcard')
+                    @include('products.productcard')
                 @endforeach
             </div>
 
