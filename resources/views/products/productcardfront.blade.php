@@ -4,7 +4,7 @@
     {{-- Front Cover --}}
     <div class="cover">
         {{-- Cover Image --}}
-        <img src="../resources/assets/images/rotating_card_thumb3.png"/>
+
     </div>
 
     {{-- Card Product Image --}}

@@ -10,6 +10,13 @@
 
     <div style="margin-top: 120px;">
 
+        <div class="page-header container">
+            <h3>Items matching your search :</h3>
+
+        </div>
+
+        <div class="container">
+
         {{-- Display Category --}}
         @foreach($passedData as $product)
 
@@ -18,6 +25,7 @@
 
 
         @endforeach
+        </div>
 
 
 
