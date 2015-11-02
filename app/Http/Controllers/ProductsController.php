@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Input as Input;
 use App\Http\Controllers\Controller;
 use App\Product;
 use App\Category;
@@ -36,14 +37,32 @@ class ProductsController extends Controller
         foreach($products as $product)
         {
             //Store Each Product in Specific Category
-            $passedData[$product->ProductCategoryId]['products'][$product->ProductId]= array('product_id'=> $product->ProductId,
+            $passedData[$product->ProductCategoryId]['products'][$product->ProductId]= array('id'=> $product->ProductId,
                                                                                                 'product_name'=> $product->Name,
-                                                                                                'product_price'=> $product->ProductPrice);
+                                                                                                'price'=> $product->ProductPrice);
         }
 
         //Return View Product List
         return view('products.productlist')->with('passedData', $passedData);
     }
+
+
+    public function search()
+    {
+        $query = Input::get('product-name');
+
+        $items = $query
+            ? Product::where('product_name', 'LIKE', "%$query%")->get()->toArray()
+            : Product::all();
+
+
+
+        return view('products.searchlist')->with('passedData', $items);
+
+    }
+
+
+
 
     public function categoryDisplay()
     {

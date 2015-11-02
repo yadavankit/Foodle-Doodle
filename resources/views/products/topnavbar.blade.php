@@ -9,27 +9,33 @@
 
             {{-- Brand Logo --}}
             <a class="navbar-brand" href="#">FoodleDoodle<sup>beta</sup></a>
+
+            <a class="navbar-brand" href="#">
+                @if(Auth::check())
+
+                <form action="auth/logout">
+                    <button type="submit" class="btn btn-default">Logout, {{Auth::user()->name}}</button>
+                </form>
+
+            @else
+
+                <form action="auth/login">
+                    <button type="submit" class="btn btn-default">Login</button>
+                </form>
+
+            @endif
+            </a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 
-            @if(Auth::check())
 
-                {{--Logout Button--}}
-                <button type="submit" class="btn btn-default">Logout</button>
-
-            @else
-
-                {{--Login Button--}}
-                <button type="submit" class="btn btn-default">Login</button>
-
-            @endif
 
                 {{-- Search Box Form --}}
-            <form class="navbar-form navbar-right" role="search">
+            <form method="get" action="products/search" class="navbar-form navbar-right">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="I Wanna Have...">
+                    <input name="product-name" type="text" class="form-control" placeholder="I Wanna Have...">
                 </div>
                 <button type="submit" class="btn btn-default">Search</button>
             </form>

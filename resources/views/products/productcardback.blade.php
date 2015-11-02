@@ -12,13 +12,13 @@
         {{-- Card Back Content Main --}}
         <div class="main" style="height: 100px;">
             {{-- Product Price --}}
-            <h4 class="text-center">&#8377; {{ $product['product_price'] }} per pc.</h4>
+            <h4 class="text-center">&#8377; {{ $product['price'] }} per pc.</h4>
             <br>
 
             {{-- Quantity Select Form --}}
             <form>
                 <h4 class="text-center">Enter Quantity</h4>
-                <input type="hidden" name="product_id" value="{{$product['product_id']}}">
+                <input type="hidden" name="product_id" value="{{$product['id']}}">
                 <div class="col-lg-12" style="position: center;">
                     <input class="form-control" type="number" name="quantity" min="1" max="99">
                     <br>

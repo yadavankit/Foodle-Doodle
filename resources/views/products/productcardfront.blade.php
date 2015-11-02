@@ -20,7 +20,7 @@
             {{-- Product Name --}}
             <h3 class="name">{{ $product['product_name'] }}</h3>
             {{-- Product Price --}}
-            <h4 class="profession">&#8377; {{ $product['product_price'] }}</h4>
+            <h4 class="profession">&#8377; {{ $product['price'] }}</h4>
         </div>
     </div>
 </div>

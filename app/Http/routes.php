@@ -27,6 +27,10 @@ Route::controllers([
 //Product List Route
 Route::get('products', 'ProductsController@index');
 
+
+//Product Search Route
+Route::get('products/search', 'ProductsController@search');
+
 ////Primary SignUp Route
 //Route::post('signup', 'UserController@primarySignUp');
 //
