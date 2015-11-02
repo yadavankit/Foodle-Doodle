@@ -7,6 +7,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Product;
 use App\Category;
+use Illuminate\Support\Facades\Auth as Auth;
+use Illuminate\Support\Facades\Session as Session;
 
 class ProductsController extends Controller
 {
@@ -46,12 +48,15 @@ class ProductsController extends Controller
     public function categoryDisplay()
     {
 
+
     }
 
     //Show a Specific Product
     public function show($id)
     {
-        //
+        $product = Product::find($id);
+        $category = $product->category();
+        dd($category);
     }
 
 }

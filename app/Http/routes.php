@@ -16,6 +16,12 @@ Route::get('/', function () {
     return view('login');
 });
 
+//Auth Controller Routes
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
+
 //Primary SignUp Route
 Route::post('signup', 'UserController@primarySignUp');
 
@@ -25,13 +31,10 @@ Route::post('login', 'UserController@primaryLogin');
 //Product Display Route
 Route::get('products', 'ProductsController@index');
 
-//Product Category Route
-Route::get('products/{category}', 'ProductController@categoryDisplay');
-
 //Guest Login Route
 Route::get('guest-login', 'UserController@guestLogin');
 
-
-
+//Product Details Route
+Route::get('products/{id}', 'ProductsController@show');
 
 
