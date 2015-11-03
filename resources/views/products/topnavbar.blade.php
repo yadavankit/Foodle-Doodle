@@ -45,7 +45,7 @@
 
                 <ul class="nav navbar-nav">
                     <li class="dropdown navbar-right">
-                        <a href="#">Cart <span class="badge">10</span></a>
+                        <a href="#">Cart <span class="badge">{{Session::get('cart')}}</span></a>
                     </li>
                 </ul>
 

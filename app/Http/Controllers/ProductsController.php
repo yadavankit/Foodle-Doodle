@@ -8,14 +8,27 @@ use Illuminate\Support\Facades\Input as Input;
 use App\Http\Controllers\Controller;
 use App\Product;
 use App\Category;
+use App\Cart;
 use Illuminate\Support\Facades\Auth as Auth;
 use Illuminate\Support\Facades\Session as Session;
+
+//Products Controller
 
 class ProductsController extends Controller
 {
     //Show all Products
+
     public function index()
     {
+        //Store Cart count in Session
+        if(Session::has('user'))
+        {
+            $cart_count = Cart::all()->where('user_id', Session::get('user'))->count();
+
+            //Store Count in Session
+            Session::put('cart', $cart_count);
+        }
+
         //Passed Data Array
         $passedData= array();
 
@@ -46,17 +59,18 @@ class ProductsController extends Controller
         return view('products.productlist')->with('passedData', $passedData);
     }
 
-
+    //Search for a Product
     public function search()
     {
+        //Get Item name to be searched
         $query = Input::get('product-name');
 
+        //Extract Matching Items
         $items = $query
             ? Product::where('product_name', 'LIKE', "%$query%")->get()->toArray()
             : Product::all();
 
-
-
+        //Return Searchlist View
         return view('products.searchlist')->with('passedData', $items);
 
     }

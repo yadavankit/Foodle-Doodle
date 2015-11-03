@@ -11,7 +11,7 @@
     @include('products.categorynavbar')
 
     <div style="margin-top: 120px;">
-
+`
         {{-- Display Category --}}
         @foreach($passedData as $category)
 

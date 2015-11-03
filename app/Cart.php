@@ -43,4 +43,5 @@ class Cart extends Model
         //Return Details
         return $details;
     }
+
 }

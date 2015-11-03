@@ -4,13 +4,15 @@
     {{-- Front Cover --}}
     <div class="cover">
         {{-- Cover Image --}}
+        <img class="img-cover" src="http://www.92pixels.com/wp-content/uploads/2013/07/wood-textures-9.jpg"/>
+
 
     </div>
 
     {{-- Card Product Image --}}
     <div class="user">
         {{-- Product Image --}}
-        <img class="img-circle" src="http://www.ilovealabamafood.com/wp-content/uploads/2011/12/dish-detail-bouillabaisse.png"/>
+        <img class="img-circle" src="http://www.ndtv.com/cooks/images/punjabi-samosa_med.jpg"/>
     </div>
 
     {{-- Card Front Content --}}

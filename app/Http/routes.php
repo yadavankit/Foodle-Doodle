@@ -31,19 +31,5 @@ Route::get('products', 'ProductsController@index');
 //Product Search Route
 Route::get('products/search', 'ProductsController@search');
 
-////Primary SignUp Route
-//Route::post('signup', 'UserController@primarySignUp');
-//
-////Primary Login Route
-//Route::post('login', 'UserController@primaryLogin');
-//
-////Product Display Route
-//Route::get('products', 'ProductsController@index');
-//
-////Guest Login Route
-//Route::get('guest-login', 'UserController@guestLogin');
-//
-////Product Details Route
-//Route::get('products/{id}', 'ProductsController@show');
 
 
