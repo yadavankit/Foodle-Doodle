@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Input as Input;
 use Illuminate\Support\Facades\Session as Session;
 use App\Cart;
+use App\User;
+use App\Product;
 use Illuminate\Support\Facades\Redirect as Redirect;
 
 //Cart Controller
@@ -49,6 +51,46 @@ class CartController extends Controller
 
     }
 
+    //Display Cart for a User
+    public function index()
+    {
+        //Get User ID From Session
+        $user_id = Session::get('user');
+
+        //User's cart
+        $cart = User::find($user_id)->cart;
+
+        //Product Details
+        $product_details= array();
+        $i = 0;
+
+        //Foreach Cart, extract Product Details
+        foreach($cart as $product)
+        {
+            //Save details
+            $product_details[$i] = Product::find($product->product_id)->productDetails;
+            //Save Quantity
+            $product_details[$i]['quantity'] = $product->quantity;
+            //Calculate Sub Total
+            $product_details[$i]['total_price'] = $product_details[$i]['price'] * $product_details[$i]['quantity'];
+            //Increment
+            $i++;
+        }
+
+        //Grand Total
+        $grand_total = 0;
+
+        //Foreach Sub Total
+        foreach($product_details as $product_detail)
+        {
+            //Calculate Grand Total
+            $grand_total = $grand_total + $product_detail['total_price'];
+        }
+
+        //Return Show Cart View
+        return view('cart.show')->with('product_details', $product_details)
+                                ->with('grand_total', $grand_total);
+    }
 
 
 }

@@ -34,7 +34,10 @@ Route::get('products/search', 'ProductsController@search');
 //Product Add To Cart Route
 Route::get('products/order', 'CartController@addToCart');
 
-//Session Get
+//Cart Display Route
+Route::get('cart', 'CartController@index');
+
+//Session Get Route
 Route::get('get', function()
 {
     echo Session::get('user');

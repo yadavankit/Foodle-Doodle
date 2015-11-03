@@ -42,7 +42,7 @@
 
                 <ul class="nav navbar-nav">
                     <li class="dropdown navbar-right">
-                        <a href="#">Cart <span class="badge">{{Session::get('cart')}}</span></a>
+                        <a href="cart">Cart <span class="badge">{{Session::get('cart')}}</span></a>
                     </li>
                 </ul>
 
