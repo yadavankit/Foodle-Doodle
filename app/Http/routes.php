@@ -31,5 +31,8 @@ Route::get('products', 'ProductsController@index');
 //Product Search Route
 Route::get('products/search', 'ProductsController@search');
 
+//Product Add To Cart Route
+Route::get('products/order', 'CartController@addToCart');
+
 
 

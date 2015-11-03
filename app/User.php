@@ -17,6 +17,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 
     protected $table = 'users';
 
+    //Mass Assignment Fix
     protected $fillable = ['name','email', 'password'];
 
     //Define Accessor for User ID

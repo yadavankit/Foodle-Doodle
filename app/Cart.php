@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cart extends Model
 {
+    //Mass Assignment Fix
+    protected $fillable = ['user_id', 'product_id', 'status', 'quantity'];
+
     //Define Accessor for Cart ID
     public function getCartIdAttribute()
     {

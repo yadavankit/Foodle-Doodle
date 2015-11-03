@@ -29,10 +29,7 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-
-
-
-                {{-- Search Box Form --}}
+            {{-- Search Box Form --}}
             <form method="get" action="products/search" class="navbar-form navbar-right">
                 <div class="form-group">
                     <input name="product-name" type="text" class="form-control" placeholder="I Wanna Have...">
@@ -50,8 +47,6 @@
                 </ul>
 
             @endif
-
-
 
         </div>
 

@@ -23,11 +23,9 @@
                     {{-- Display Products --}}
                     @include('products.productcard')
 
-
         @endforeach
+
         </div>
-
-
 
     </div>
 

@@ -19,8 +19,9 @@
 {{--Scrolling Nav CSS--}}
 <link rel="stylesheet" href="/FoodleApp/resources/assets/css/scrolling-nav.css">
 
-{{--Scrolling Nav JS--}}
-<script src="/FoodleApp/resources/assets/js/scrolling-nav.js"></script>
+{{--jQuery CDN Link--}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-{{--Jquery--}}
-<script src="/FoodleApp/resources/assets/js/jquery.easing.min.js"></script>
+{{--Scrolling Nav JS--}}
+<script src="/FoodleApp/resources/assets/js/foodle.js"></script>
+

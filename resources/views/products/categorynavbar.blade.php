@@ -5,9 +5,12 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <center>
                 <ul class="nav navbar-nav" style="padding-left: 150px;">
+
+                    {{--For Each Category--}}
                     @foreach($passedData as $category)
                     <li><a href="#{{$category['category_name']}}" class="page-scroll"><strong>{{strtoupper($category['category_name'])}}</strong></a></li>
                     @endforeach
+
                 </ul>
                 </center>
             </div>

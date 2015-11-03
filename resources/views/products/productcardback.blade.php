@@ -15,8 +15,8 @@
             <h4 class="text-center">&#8377; {{ $product['price'] }} per pc.</h4>
             <br>
 
-            {{-- Quantity Select Form --}}
-            <form>
+            {{-- Product and Quantity Select Form --}}
+            <form method="get" action="products/order">
                 <h4 class="text-center">Enter Quantity</h4>
                 <input type="hidden" name="product_id" value="{{$product['id']}}">
                 <div class="col-lg-12" style="position: center;">

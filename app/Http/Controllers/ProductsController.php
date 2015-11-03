@@ -75,15 +75,6 @@ class ProductsController extends Controller
 
     }
 
-
-
-
-    public function categoryDisplay()
-    {
-
-
-    }
-
     //Show a Specific Product
     public function show($id)
     {

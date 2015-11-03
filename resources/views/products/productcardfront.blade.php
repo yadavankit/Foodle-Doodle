@@ -4,7 +4,7 @@
     {{-- Front Cover --}}
     <div class="cover">
         {{-- Cover Image --}}
-        <img class="img-cover" src="http://www.92pixels.com/wp-content/uploads/2013/07/wood-textures-9.jpg"/>
+        <img class="img-cover" src="http://wallpaper.gilagamers.com/images/11541-wood-table-top-texture.jpg"/>
 
 
     </div>
