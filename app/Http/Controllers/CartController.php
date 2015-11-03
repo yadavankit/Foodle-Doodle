@@ -20,16 +20,32 @@ class CartController extends Controller
         $quantity = Input::get('quantity');
         $user_id = Session::get('user');
 
-        //Create an entry in Cart
-        Cart::create(['user_id'=> $user_id,
-                        'product_id'=> $product_id,
-                        'status'=>"ordered",
-                        'quantity'=> $quantity,
-                    ]);
+        //Check for Previous Entries for same User and Product
+        $previousQuantity = Cart::where('user_id', $user_id)
+                                    ->where('product_id', $product_id)
+                                    ->pluck('quantity');
+
+        //If Previous Entries Exist
+        if($previousQuantity)
+        {
+            //Update Increment Quantity
+            Cart::where('user_id', $user_id)
+                ->where('product_id', $product_id)
+                ->update(['quantity'=> $previousQuantity + $quantity]);
+        }
+        //If No Previous Entry Exists
+        else
+        {
+            //Create an new entry in Cart
+            Cart::create(['user_id'=> $user_id,
+                'product_id'=> $product_id,
+                'status'=>"ordered",
+                'quantity'=> $quantity,
+            ]);
+        }
 
         //Redirect to Product List
         return Redirect::to('products');
-
 
     }
 

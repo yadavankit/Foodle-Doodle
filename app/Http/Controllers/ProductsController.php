@@ -24,7 +24,6 @@ class ProductsController extends Controller
         if(Session::has('user'))
         {
             $cart_count = Cart::all()->where('user_id', Session::get('user'))->count();
-
             //Store Count in Session
             Session::put('cart', $cart_count);
         }
