@@ -33,8 +33,11 @@
                             <a href="products/order?product_id={{$product['product_id']}}&quantity=1&source=cart">
                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                             </a>
-                            <a href="products/order?product_id={{$product['product_id']}}&quantity=-1&source=cart">
+                            <a href="products/order?product_id={{$product['product_id']}}&quantity=-1&source=cart&action=minus">
                                 <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                            </a>
+                            <a href="products/order?product_id={{$product['product_id']}}&quantity=0&source=cart&action=remove">
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                             </a>
                         </div>
                     </div>
