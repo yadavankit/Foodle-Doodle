@@ -28,6 +28,13 @@ class CartController extends Controller
                                     ->pluck('quantity');
 
         //If Previous Entries Exist
+//        if(Input::get('action')=="remove" || ($previousQuantity == 1 && Input::get('action')== "minus"))
+//        {
+//            Cart::where('user_id', $user_id)
+//                ->
+//        }
+
+
         if($previousQuantity)
         {
             //Update Increment Quantity
@@ -46,6 +53,11 @@ class CartController extends Controller
             ]);
         }
 
+        if (Input::get('source'))
+        {
+            //Redirect to Product List
+            return Redirect::to('cart');
+        }
         //Redirect to Product List
         return Redirect::to('products');
 

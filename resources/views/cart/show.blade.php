@@ -14,8 +14,6 @@
         </div>
         <div class="container col-md-7">
 
-
-
                 @foreach($product_details as $product)
                     <div class="container">
                         <div class="col-md-3" style="width: 150px;">
@@ -24,19 +22,24 @@
                             </a>
                         </div>
 
-                        <div class="col-md-9">
-                            <h4>Item Name : {{ $product['product_name'] }}
-                            <h4>Quantity : {{ $product['quantity'] }} {{ $product['quantity'] == "1" ? "pc." : "pcs." }}
+                        <div class="col-md-4">
+                            <h4>Item Name : {{ $product['product_name'] }}</h4>
+                            <h4>Quantity : {{ $product['quantity'] }} {{ $product['quantity'] == "1" ? "pc." : "pcs." }}</h4>
                             <h4>Price : &#8377; {{ $product['price'] }} per pc.</h4>
                             <h4>Sub Total : &#8377; {{ $product['total_price'] }}</h4>
+                        </div>
+
+                        <div class="col-md-1">
+                            <a href="products/order?product_id={{$product['product_id']}}&quantity=1&source=cart">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            </a>
+                            <a href="products/order?product_id={{$product['product_id']}}&quantity=-1&source=cart">
+                                <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                            </a>
                         </div>
                     </div>
                     <hr>
                 @endforeach
-
-
-
-
 
             </div>
         <div class="container col-lg-5">
