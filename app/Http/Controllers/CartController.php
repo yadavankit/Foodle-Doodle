@@ -73,6 +73,8 @@ class CartController extends Controller
         //User's cart
         $cart = User::find($user_id)->cart;
 
+        Session::put('cart', $cart->count());
+
         //Product Details
         $product_details= array();
         $i = 0;

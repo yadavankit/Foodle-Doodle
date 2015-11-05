@@ -45,7 +45,7 @@
                 @endforeach
 
             </div>
-        <div class="container col-lg-5">
+        <div class="checkoutBox container col-lg-5">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3>Secure Checkout</h3>
