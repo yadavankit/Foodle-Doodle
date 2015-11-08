@@ -37,6 +37,9 @@ Route::get('products/order', 'CartController@addToCart');
 //Cart Display Route
 Route::get('cart', 'CartController@index');
 
+//Checkout Route
+Route::get('checkout', 'CartController@checkout');
+
 //Session Get Route
 Route::get('get', function()
 {

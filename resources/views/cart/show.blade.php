@@ -51,7 +51,12 @@
                     <h3>Secure Checkout</h3>
                 </div>
                 <div class="panel-body">
-                    <h4>Grand Total : &#8377; {{ $grand_total }}
+                    <h4>Grand Total : &#8377; {{ $grand_total }}</h4>
+                    <form action="checkout">
+                            {{-- Checkout from Cart --}}
+                            <h3><center><input type="submit" value="Checkout Now" class="btn btn-md btn-warning"></center></h3>
+                        </div>
+                    </form>
                 </div>
             </div>
             </div>

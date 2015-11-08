@@ -30,9 +30,8 @@ class CartController extends Controller
         //If Previous Entries Exist
         if(Input::get('action')=="remove" || ($previousQuantity == 1 && Input::get('action')== "minus"))
         {
-            Cart::where('user_id', $user_id)
-                ->where('product_id', $product_id)
-                ->delete();
+            $this->removeFromCartList($user_id, $product_id);
+
         }
 
 
@@ -106,6 +105,23 @@ class CartController extends Controller
         return view('cart.show')->with('product_details', $product_details)
                                 ->with('grand_total', $grand_total);
     }
+
+    public function removeFromCartList($user_id, $product_id)
+    {
+        //Remove Product from Cart List
+        Cart::where('user_id', $user_id)
+            ->where('product_id', $product_id)
+            ->delete();
+
+    }
+
+    public function checkout()
+    {
+        
+    }
+
+
+
 
 
 }

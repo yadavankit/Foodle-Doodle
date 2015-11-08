@@ -58,7 +58,7 @@ return [
             'database'  => 'FoodleApp',
             'username'  => 'root',
             'port'      => '3300',
-            'password'  => '',
+            'password'  => 'password',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

@@ -47,4 +47,6 @@ class Cart extends Model
         return $details;
     }
 
+
+
 }
