@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Session as Session;
 use App\Cart;
 use App\User;
 use App\Product;
+use App\UserDetail;
 use Illuminate\Support\Facades\Redirect as Redirect;
 
 //Cart Controller
@@ -117,6 +118,25 @@ class CartController extends Controller
 
     public function checkout()
     {
+        $details= User::find(Session::get('user'))->moreDetails;
+
+        return view('cart.checkout', compact('details'));
+
+    }
+
+    public function posted()
+    {
+        $mobile= Input::get('mobile_no');
+        $address= Input::get('address');
+
+        $details = UserDetail::firstOrCreate(array('user_id' => Session::get('user')));
+
+        $details->address = $address;
+        $details->mobile_no = $mobile;
+
+        $details->save();
+
+
 
     }
 

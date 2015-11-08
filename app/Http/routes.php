@@ -40,6 +40,10 @@ Route::get('cart', 'CartController@index');
 //Checkout Route
 Route::get('checkout', 'CartController@checkout');
 
+
+//Checkout Route
+Route::post('posted', 'CartController@posted');
+
 //Session Get Route
 Route::get('get', function()
 {
